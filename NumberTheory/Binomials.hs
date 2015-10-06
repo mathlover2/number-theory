@@ -1,16 +1,9 @@
-module NumberTheory.Binomials
+module NumberTheory.Binomials (binomial)
        where
 
--- | A (relatively) efficient implementation of the factorial
--- function. Is tail recursive.
+import Factory.Math.Implementations.Factorial
+import Factory.Data.PrimeFactors
+import Data.Ratio ((%))
 
-factorial = f 1
-  where f acc 0 = acc
-        f acc n = f (acc*n) (n-1)
-
-poch m n = p 1 n
-  where p 0 _ = 0
-        p acc 0 = acc
-        p acc k = p (acc*(m-k+1)) (k-1)
-
-binomial m n = (poch m n) `div` (factorial n)
+binomial m n = let pfd = primeFactors (m-n) >*< primeFactors n
+               in  product' (1 % 2) 10 $ fst $ (primeFactors m) >/< pfd
