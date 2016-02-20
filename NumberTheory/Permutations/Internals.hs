@@ -115,7 +115,13 @@ instance Permutation InversionVector where
 -- the language pragmas at the top of the file.
 
 instance (Permutation a) => Eq a where
-   (==) = ((==) `on` (functionalForm.functionalFormReduce.toFunctionalForm))
+   (==) = eq'
+
+eq' :: (Permutation a) => a -> a -> Bool
+eq' a b = let (FunctionalForm a') = functionalFormReduce $ toFunctionalForm a
+              (FunctionalForm b') = functionalFormReduce $ toFunctionalForm b
+          in a' == b'
+
 
 -- An instance of Monoid for permutation representations. This
 -- requires the language pragmas at the top of the file.

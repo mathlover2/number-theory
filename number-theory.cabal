@@ -16,7 +16,7 @@ build-type:          Simple
 cabal-version:       >=1.10
 
 library
-  exposed-modules:     NumberTheory.Binomials, NumberTheory.Partitions, NumberTheory.TotientFunction, NumberTheory.PrimeRelated, NumberTheory.PositionalBases, NumberTheory.Congruences, NumberTheory.FractionalDigits, NumberTheory.Permutations, NumberTheory.ModularExponentiation, NumberTheory.PrimeRelated.PrimeTreeDraw, NumberTheory.PrimeRelated.MillerRabin, NumberTheory.PrimeRelated.PrimeTests, NumberTheory.Permutations.CycManip, NumberTheory.Permutations.Internals
+  exposed-modules:     NumberTheory.Binomials, NumberTheory.Partitions, NumberTheory.TotientFunction, NumberTheory.PrimeRelated, NumberTheory.PositionalBases, NumberTheory.Congruences, NumberTheory.FractionalDigits, NumberTheory.Permutations, NumberTheory.ModularExponentiation, NumberTheory.PrimeRelated.PrimeTreeDraw, NumberTheory.PrimeRelated.MillerRabin, NumberTheory.PrimeRelated.PrimeTests, NumberTheory.Permutations.CycManip, NumberTheory.Permutations.PermutationGroups, NumberTheory.Permutations.Internals
   -- other-modules:       
   other-extensions:    FlexibleInstances, OverlappingInstances, UndecidableInstances
   build-depends:       base >=4.7 && <4.8
